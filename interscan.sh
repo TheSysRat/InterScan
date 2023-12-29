@@ -6,8 +6,6 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-IP="$1"
-
 # Scan port ..
 
-for port in {1..65535}; do (echo Hello > /dev/tcp/$IP/$port && echo "Port $port is OPEN") 2>/dev/null; done 
+for port in {1..65535}; do (echo Hello > /dev/tcp/$1/$port && echo "Port $port is OPEN") 2>/dev/null; done 
